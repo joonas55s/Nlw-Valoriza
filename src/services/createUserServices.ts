@@ -10,8 +10,7 @@ interface Props{
 
 class createUserServices{
     async execute({name,email,admin}:Props){
-        try{
-
+       
             const userRepository= await getCustomRepository(UsersRepositories);
 
             if(!email){
@@ -34,9 +33,7 @@ class createUserServices{
             await userRepository.save(user);
 
             return user;
-        }catch(err){
-            console.log(err);
-        }
+
     }
 }
 

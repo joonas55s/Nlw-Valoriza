@@ -13,6 +13,10 @@ class CreateTagService{
             name,
         });
 
+        if(tagAlreadyExists){
+            throw new Error("Tag already exists!");
+            
+        }
         const tag = tagsReposiories.create({
             name,
         });
